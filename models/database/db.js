@@ -1,18 +1,18 @@
 const mysql = require('mysql2');
 
 const pool = mysql.createPool({
-  host: '127.0.0.1',
-  user: 'root',
-  database: 'cloudfit',
-  password: 'afasina',
+  host: '*******',
+  user: '******',
+  database: '*********',
+  password: '*********',
 });
 
-// let sql = 'SELECT * FROM cloudfit.category;';
+let sql = 'SELECT * FROM cloudfit.category LIMIT 1';
 
-// pool.execute(sql, function (err, result) {
-//   if (err) throw err;
+pool.execute(sql, function (err, result) {
+  if (err) throw err;
 
-//   console.log(result);
-// });
+  console.log("DB connected");
+});
 
 module.exports = pool.promise();
